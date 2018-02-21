@@ -25,7 +25,7 @@ import userData.UserDataTypes;
 public class Main extends Application {
 	//primaryStage and rootScene are defined as global variables to use them in the start and loadGUI method
 	private Stage primaryStage;
-    private Scene rootScene;
+	private Scene rootScene;
 
 	private MainController mainController;
 
@@ -35,14 +35,14 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
-	    //create scene (init scene in the start method to avoid resizing of the window)
+		//create scene (init scene in the start method to avoid resizing of the window)
 		rootScene = new Scene(new Parent() {}, 400, 425);
 
 		//set stage for the global var
 		primaryStage = stage;
 
 		//disable resizing and set icon
-        primaryStage.setResizable(false);
+		primaryStage.setResizable(false);
 		primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/userTheme/img/icon.png")));
 
 		//load gui and show the stage
@@ -69,34 +69,34 @@ public class Main extends Application {
 		//set window title
 		primaryStage.setTitle(bundle.getString("lang.windowTitle"));
 
-	    try {
-	    	//load FXML
+		try {
+			//load FXML
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/userTheme/Main.fxml"), bundle);
 
-	    	//set root
-	    	Parent root = loader.load();
+			//set root
+			Parent root = loader.load();
 
-	    	//set controller
+			//set controller
 			mainController = loader.getController();
 
 			//set parent of the controller
 			mainController.setParent(this);
 
-	    	//create scene
-	    	rootScene.setRoot(root);
+			//create scene
+			rootScene.setRoot(root);
 
-	    	//clear css to avoid two css files being loaded at the same time
-	    	rootScene.getStylesheets().clear();
+			//clear css to avoid two css files being loaded at the same time
+			rootScene.getStylesheets().clear();
 
-	    	//add css selected by the user
-	    	rootScene.getStylesheets().add(getClass().getResource("/userTheme/css/" + userData.read(UserDataTypes.userTheme) + ".css").toExternalForm());
+			//add css selected by the user
+			rootScene.getStylesheets().add(getClass().getResource("/userTheme/css/" + userData.read(UserDataTypes.userTheme) + ".css").toExternalForm());
 
-	    	//insert scene into stage
+			//insert scene into stage
 			primaryStage.setScene(rootScene);
 
-	    } catch (IOException e) {
-	    	e.printStackTrace();
-	    }
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

@@ -6,9 +6,9 @@ package passwordLogicCore;
  * Created by alphaClass on 09.01.2017.
  */
 public enum SequenceClassTypes {
-    upperCaseLetters,
-    lowerCaseLetters,
-    numbers,
-    specialChars,
-    excludeConfusingChars,
+	upperCaseLetters,
+	lowerCaseLetters,
+	numbers,
+	specialChars,
+	excludeConfusingChars,
 }

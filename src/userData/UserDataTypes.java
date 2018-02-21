@@ -16,9 +16,9 @@ public enum UserDataTypes {
 	languageLangCode,
 	lengthOfPw,
 	userTheme,
-    lowerCaseSetting,
-    upperCaseSetting,
-    numberSetting,
-    specialCharSetting,
-    excludeConfusingCharSetting
+	lowerCaseSetting,
+	upperCaseSetting,
+	numberSetting,
+	specialCharSetting,
+	excludeConfusingCharSetting
 }

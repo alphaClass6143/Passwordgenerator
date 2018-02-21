@@ -61,11 +61,11 @@ public class UserDataHandler {
 			currentSettings = new UserDataSet(	currentLanguage,
 												prefs.get("" + UserDataTypes.lengthOfPw, ""),
 												prefs.get("" + UserDataTypes.userTheme, ""),
-                                                prefs.getBoolean("" + UserDataTypes.lowerCaseSetting, true),
-                                                prefs.getBoolean("" + UserDataTypes.upperCaseSetting, true),
-                                                prefs.getBoolean("" + UserDataTypes.numberSetting, true),
-                                                prefs.getBoolean("" + UserDataTypes.specialCharSetting, false),
-                                                prefs.getBoolean("" + UserDataTypes.excludeConfusingCharSetting, true));
+												prefs.getBoolean("" + UserDataTypes.lowerCaseSetting, true),
+												prefs.getBoolean("" + UserDataTypes.upperCaseSetting, true),
+												prefs.getBoolean("" + UserDataTypes.numberSetting, true),
+												prefs.getBoolean("" + UserDataTypes.specialCharSetting, false),
+												prefs.getBoolean("" + UserDataTypes.excludeConfusingCharSetting, true));
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -79,8 +79,8 @@ public class UserDataHandler {
 	 * usually triggered by saving the settings
 	 */
 	public boolean saveAll(UserDataSet newSettings) {
-	    Map<SequenceClassTypes, Boolean> map = newSettings.CheckBoxSettings();
-        boolean saveSuccess = false;
+		Map<SequenceClassTypes, Boolean> map = newSettings.CheckBoxSettings();
+		boolean saveSuccess = false;
 
 
 		for(SequenceClassTypes type : SequenceClassTypes.values()) {
@@ -90,30 +90,30 @@ public class UserDataHandler {
 			}
 		}
 
-        if(saveSuccess) {
-            for(UserDataTypes type : UserDataTypes.values()) {
-                if(type != UserDataTypes.upperCaseSetting) {
-                    prefs.put("" + type, newSettings.read(type));
-                }
-                else {
-                    break;
-                }
-            }
-            prefs.putBoolean("" + UserDataTypes.upperCaseSetting, map.get(SequenceClassTypes.upperCaseLetters));
-            prefs.putBoolean("" + UserDataTypes.lowerCaseSetting, map.get(SequenceClassTypes.lowerCaseLetters));
-            prefs.putBoolean("" + UserDataTypes.numberSetting, map.get(SequenceClassTypes.numbers));
-            prefs.putBoolean("" + UserDataTypes.specialCharSetting, map.get(SequenceClassTypes.specialChars));
-            prefs.putBoolean("" + UserDataTypes.excludeConfusingCharSetting, map.get(SequenceClassTypes.excludeConfusingChars));
+		if(saveSuccess) {
+			for(UserDataTypes type : UserDataTypes.values()) {
+				if(type != UserDataTypes.upperCaseSetting) {
+					prefs.put("" + type, newSettings.read(type));
+				}
+				else {
+					break;
+				}
+			}
+			prefs.putBoolean("" + UserDataTypes.upperCaseSetting, map.get(SequenceClassTypes.upperCaseLetters));
+			prefs.putBoolean("" + UserDataTypes.lowerCaseSetting, map.get(SequenceClassTypes.lowerCaseLetters));
+			prefs.putBoolean("" + UserDataTypes.numberSetting, map.get(SequenceClassTypes.numbers));
+			prefs.putBoolean("" + UserDataTypes.specialCharSetting, map.get(SequenceClassTypes.specialChars));
+			prefs.putBoolean("" + UserDataTypes.excludeConfusingCharSetting, map.get(SequenceClassTypes.excludeConfusingChars));
 
-            currentSettings = newSettings;
+			currentSettings = newSettings;
 
-            //returns the successful save
-            return true;
-        }
-        else {
-        	//save was not successful
-            return false;
-        }
+			//returns the successful save
+			return true;
+		}
+		else {
+			//save was not successful
+			return false;
+		}
 
 	}
 	
@@ -147,18 +147,18 @@ public class UserDataHandler {
 	}
 
 
-    /**
-     * Returns language object from given language name
-     *
-     * @param languageName - String
-     * @return - Language object
-     */
+	/**
+	 * Returns language object from given language name
+	 *
+	 * @param languageName - String
+	 * @return - Language object
+	 */
 	public Language getLanguage(String languageName) {
-        for(Language elem : languages) {
-            if(elem.getLanguageName().equals(languageName)) {
-                return elem;
-            }
-        }
-        return currentLanguage;
-    }
+		for(Language elem : languages) {
+			if(elem.getLanguageName().equals(languageName)) {
+				return elem;
+			}
+		}
+		return currentLanguage;
+	}
 }

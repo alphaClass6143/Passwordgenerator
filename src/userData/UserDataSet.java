@@ -47,11 +47,11 @@ public class UserDataSet {
 		this.excludeConfusingCharSetting = excludeConfusingCharSetting;
 	}
 
-    /**
-     * Read all string settings in the UserDataSet
-     * @param type - UserDataTypes type of user data specified by enum
-     * @return - String of the setting
-     */
+	/**
+	 * Read all string settings in the UserDataSet
+	 * @param type - UserDataTypes type of user data specified by enum
+	 * @return - String of the setting
+	 */
 	public String read(UserDataTypes type) {
 		switch(type)  {
 			case languageName:
@@ -63,26 +63,26 @@ public class UserDataSet {
 			case lengthOfPw:
 				return lengthOfPw;
 			case userTheme:
-                return userTheme;
+				return userTheme;
 		}
 		return "" + type;
 	}
 
-    /**
-     * Returns a boolean array with the CheckBox settings
-     * @return boolean[] - Content order: upperCaseSetting - lowerCaseSetting - numberSetting - specialCharSetting - excludeConfusingCharSetting
-     */
+	/**
+	 * Returns a boolean array with the CheckBox settings
+	 * @return boolean[] - Content order: upperCaseSetting - lowerCaseSetting - numberSetting - specialCharSetting - excludeConfusingCharSetting
+	 */
 	public Map<SequenceClassTypes, Boolean> CheckBoxSettings() {
 
 
-        Map<SequenceClassTypes, Boolean> output = new EnumMap<>(SequenceClassTypes.class);
+		Map<SequenceClassTypes, Boolean> output = new EnumMap<>(SequenceClassTypes.class);
 
-	    output.put(SequenceClassTypes.upperCaseLetters, upperCaseSetting);
-	    output.put(SequenceClassTypes.lowerCaseLetters, lowerCaseSetting);
-	    output.put(SequenceClassTypes.numbers, numberSetting);
-	    output.put(SequenceClassTypes.specialChars, specialCharSetting);
-	    output.put(SequenceClassTypes.excludeConfusingChars, excludeConfusingCharSetting);
-	    return output;
-    }
+		output.put(SequenceClassTypes.upperCaseLetters, upperCaseSetting);
+		output.put(SequenceClassTypes.lowerCaseLetters, lowerCaseSetting);
+		output.put(SequenceClassTypes.numbers, numberSetting);
+		output.put(SequenceClassTypes.specialChars, specialCharSetting);
+		output.put(SequenceClassTypes.excludeConfusingChars, excludeConfusingCharSetting);
+		return output;
+	}
 
 }

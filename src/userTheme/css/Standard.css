@@ -4,44 +4,44 @@
  *                                                                             *
  ******************************************************************************/
 .root {
-    /* background colour for everything */
-    -fx-background:white;
+	/* background colour for everything */
+	-fx-background:white;
 
-    /* inner background colour for controls except buttons */
-    -fx-control-inner-background:white;
-
-
-    /* font colour in TextField (or NumberField) */
-    -fx-text-inner-color:black;
-
-    /* border colour of control objects on hover */
-    -fx-hover-base: white;
-
-    /* general font size */
-    -fx-font-size:18;
-
-    /* gradient for control overlays (i.e buttons) */
-    -fx-body-color:-fx-background;
-
-    /* ComboBox border */
-    -fx-base:#313233;
-
-    /* text colour for checkbox labels */
-    /* main text colour */
-    -fx-text-background-color:#313233;
+	/* inner background colour for controls except buttons */
+	-fx-control-inner-background:white;
 
 
-    /* border around buttons */
-    -fx-outer-border:#313233;
-    -fx-inner-border:#313233;
+	/* font colour in TextField (or NumberField) */
+	-fx-text-inner-color:black;
 
-    /* colour in controls */
-    -fx-text-base-color:#313233;
+	/* border colour of control objects on hover */
+	-fx-hover-base: white;
 
-    /* colour for checkbox marks */
-    /* changes arrows as well */
-    -fx-mark-color:darkgreen;
-    -fx-mark-highlight-color:darkgreen;
+	/* general font size */
+	-fx-font-size:18;
+
+	/* gradient for control overlays (i.e buttons) */
+	-fx-body-color:-fx-background;
+
+	/* ComboBox border */
+	-fx-base:#313233;
+
+	/* text colour for checkbox labels */
+	/* main text colour */
+	-fx-text-background-color:#313233;
+
+
+	/* border around buttons */
+	-fx-outer-border:#313233;
+	-fx-inner-border:#313233;
+
+	/* colour in controls */
+	-fx-text-base-color:#313233;
+
+	/* colour for checkbox marks */
+	/* changes arrows as well */
+	-fx-mark-color:darkgreen;
+	-fx-mark-highlight-color:darkgreen;
 }
 
 /*******************************************************************************
@@ -51,11 +51,11 @@
  ******************************************************************************/
 
 .slider .track {
-    -fx-pref-height:10;
-    -fx-background-color: #313233;
+	-fx-pref-height:10;
+	-fx-background-color: #313233;
 }
 .slider .thumb {
-    -fx-background-radius: 0.25em;
+	-fx-background-radius: 0.25em;
 }
 
 /*******************************************************************************
@@ -65,10 +65,10 @@
  ******************************************************************************/
 
 .check-box > .box {
-    -fx-background-color: darkred;
+	-fx-background-color: darkred;
 }
 .check-box:selected > .box {
-    -fx-background-color: darkgreen;
+	-fx-background-color: darkgreen;
 }
 
 /*******************************************************************************
@@ -77,11 +77,11 @@
  *                                                                             *
  ******************************************************************************/
 #settingsTabButton {
-    -fx-background-color: #0042ff;
-    -fx-font-weight:bold;
+	-fx-background-color: #0042ff;
+	-fx-font-weight:bold;
 }
 #settingsTabButton .label {
-    -fx-text-fill:white;
+	-fx-text-fill:white;
 }
 
 #settingsTab {
@@ -95,28 +95,28 @@
  ******************************************************************************/
 
 .button {
-    -fx-border-color:#313233;
-    -fx-border-width:1.5;
-    -fx-border-radius: 2px;
+	-fx-border-color:#313233;
+	-fx-border-width:1.5;
+	-fx-border-radius: 2px;
 }
 
 .confirm-button {
-     -fx-background-color: #919191;
-     -fx-text-fill:white;
+	 -fx-background-color: #919191;
+	 -fx-text-fill:white;
 }
 
 .button:hover {
-    -fx-background-color:#313233;
-    -fx-text-fill:white;
+	-fx-background-color:#313233;
+	-fx-text-fill:white;
 }
 
 .button:hover.activated{
-    -fx-cursor:pointer;
-    -fx-background-color:darkgreen;
+	-fx-cursor:pointer;
+	-fx-background-color:darkgreen;
 }
 .activated {
-    -fx-background-color: darkgreen;
-    -fx-text-fill:white;
+	-fx-background-color: darkgreen;
+	-fx-text-fill:white;
 }
 
 /*******************************************************************************
@@ -126,43 +126,43 @@
  ******************************************************************************/
 
 .combo-box {
-    -fx-border-color:#313233;
-    -fx-border-width:1.5;
-    -fx-border-radius: 1px;
+	-fx-border-color:#313233;
+	-fx-border-width:1.5;
+	-fx-border-radius: 1px;
 }
 .combo-box:hover {
-    -fx-background: #313233;
+	-fx-background: #313233;
 }
 
 .combo-box:hover > * {
-    -fx-text-fill: white;
+	-fx-text-fill: white;
 }
 
 .arrow {
-    -fx-background-color: #313233;
+	-fx-background-color: #313233;
 }
 .combo-box-base:hover .arrow {
-    -fx-background-color: white;
+	-fx-background-color: white;
 }
 
 /* ====   ComboBox dropdown   =============================================== */
 
 .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
-    -fx-background: white;
-    -fx-alignment: center;
+	-fx-background: white;
+	-fx-alignment: center;
 }
 
 .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover,
 .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover:selected {
-    -fx-accent: #313233;
-    -fx-background-color: #313233;
-    -fx-text-fill: white;
+	-fx-accent: #313233;
+	-fx-background-color: #313233;
+	-fx-text-fill: white;
 }
 
 .combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:selected {
-    -fx-accent: darkgreen;
-    -fx-background-color: darkgreen;
-    -fx-text-fill: white;
+	-fx-accent: darkgreen;
+	-fx-background-color: darkgreen;
+	-fx-text-fill: white;
 }
 
 
@@ -172,7 +172,7 @@
  *                                                                             *
  ******************************************************************************/
 .combo-box, .check-box, .slider, .button, .clickable, .list-cell {
-    -fx-cursor: hand;
+	-fx-cursor: hand;
 }
 
 /*******************************************************************************
@@ -182,7 +182,7 @@
  ******************************************************************************/
 
 #generatedPW {
-    -fx-font-weight:bold;
+	-fx-font-weight:bold;
 
 }
 

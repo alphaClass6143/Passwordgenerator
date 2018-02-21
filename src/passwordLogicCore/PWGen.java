@@ -21,54 +21,54 @@ public class PWGen {
 	//set up the sequence
 	private final List<Integer> sequenceList = new ArrayList<>();
 
-    /**
-     * Initiates the PWGen object with a list of allowed character groups
-     * @param types - HashSet of all allowed characters groups
-     */
-    public PWGen(HashSet<SequenceClassTypes> types) {
-        //init available character groups
-        final Integer[] lowercaseLetters = {97,98,99,100,101,102,103,104,105,106,107,108,108,110,111,112,113,114,115,116,117,118,119,120,121,122};
-        final Integer[] uppercaseLetters = {65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,81,82,83,84,85,86,87,88,89,90};
-        final Integer[] numbers = {48,49,50,51,52,53,54,55,56,57};
-        //list of chars in pairs starting at index 0
+	/**
+	 * Initiates the PWGen object with a list of allowed character groups
+	 * @param types - HashSet of all allowed characters groups
+	 */
+	public PWGen(HashSet<SequenceClassTypes> types) {
+		//init available character groups
+		final Integer[] lowercaseLetters = {97,98,99,100,101,102,103,104,105,106,107,108,108,110,111,112,113,114,115,116,117,118,119,120,121,122};
+		final Integer[] uppercaseLetters = {65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,81,82,83,84,85,86,87,88,89,90};
+		final Integer[] numbers = {48,49,50,51,52,53,54,55,56,57};
+		//list of chars in pairs starting at index 0
 		//character list in order separated by commas
 		//-,_,I,i,l,0,O,o
-        final Integer[] excludeConfusingChars = {45,95,73,105,108,48,79,111};
-        final Integer[] specialChars = {33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,58,59,60,61,62,63,64,91,92,93,94,95,96,123,124,125,126};
+		final Integer[] excludeConfusingChars = {45,95,73,105,108,48,79,111};
+		final Integer[] specialChars = {33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,58,59,60,61,62,63,64,91,92,93,94,95,96,123,124,125,126};
 
 
-        boolean removeConfusingChars = false;
+		boolean removeConfusingChars = false;
 
-        /*
-        Adds all the character groups to sequence list for the password generator
-        NOTE: excludeConfusingChars has special treatment because of the opposite operation (removing instead of adding)
-         */
-        for(SequenceClassTypes elem : types) {
-            switch(elem) {
-                case lowerCaseLetters:
-                    Collections.addAll(sequenceList, lowercaseLetters);
-                    break;
-                case upperCaseLetters:
-                    Collections.addAll(sequenceList, uppercaseLetters);
-                    break;
-                case numbers:
-                    Collections.addAll(sequenceList, numbers);
-                    break;
-                case specialChars:
-                    Collections.addAll(sequenceList, specialChars);
-                    break;
-                case excludeConfusingChars:
-                    //exclude chars
-                    removeConfusingChars = true;
-                    break;
-            }
-        }
+		/*
+		Adds all the character groups to sequence list for the password generator
+		NOTE: excludeConfusingChars has special treatment because of the opposite operation (removing instead of adding)
+		 */
+		for(SequenceClassTypes elem : types) {
+			switch(elem) {
+				case lowerCaseLetters:
+					Collections.addAll(sequenceList, lowercaseLetters);
+					break;
+				case upperCaseLetters:
+					Collections.addAll(sequenceList, uppercaseLetters);
+					break;
+				case numbers:
+					Collections.addAll(sequenceList, numbers);
+					break;
+				case specialChars:
+					Collections.addAll(sequenceList, specialChars);
+					break;
+				case excludeConfusingChars:
+					//exclude chars
+					removeConfusingChars = true;
+					break;
+			}
+		}
 
-        //removes all confusing chars if needed
-        if(removeConfusingChars) {
-            sequenceList.removeAll(Arrays.asList(excludeConfusingChars));
-        }
-    }
+		//removes all confusing chars if needed
+		if(removeConfusingChars) {
+			sequenceList.removeAll(Arrays.asList(excludeConfusingChars));
+		}
+	}
 
 	/**
 	 * 
