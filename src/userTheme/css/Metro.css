@@ -1,0 +1,191 @@
+/*******************************************************************************
+ *                                                                             *
+ * Root					                                                      *
+ *                                                                             *
+ ******************************************************************************/
+.root {
+	/* background colour for everything */
+	-fx-background:#313233;
+
+	/* inner background colour for controls except buttons */
+	-fx-control-inner-background:white;
+
+	/* try making the font white, this shit seems impossible */
+	-fx-fill: white;
+
+	/* font colour in TextField (or NumberField) */
+	-fx-text-inner-color:black;
+
+	/* border colour of control objects on hover */
+	-fx-hover-base: white;
+
+	/* general font size */
+	-fx-font-size:18;
+
+	/* background colour for the buttons */
+	-fx-default-button:#313233;
+
+	/* gradient for control overlays (i.e buttons) */
+	-fx-body-color:-fx-background;
+
+	/* ComboBox dropdown border */
+	-fx-base:white;
+
+	/* text colour for checkbox labels */
+	-fx-text-background-color:white;
+
+	/* border around buttons */
+	-fx-outer-border:white;
+	-fx-inner-border:white;
+
+	/* colour in controls */
+	-fx-text-base-color:white;
+
+	/* colour for checkbox marks */
+	/* changes arrows as well */
+	-fx-mark-color:darkgreen;
+	-fx-mark-highlight-color:darkgreen;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Slider				                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.slider .track {
+	-fx-pref-height:10;
+}
+.slider .thumb {
+	-fx-background-radius: 0.25em;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * CheckBox				                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.check-box > .box {
+	-fx-background-color: darkred;
+}
+.check-box:selected > .box {
+	-fx-background-color: darkgreen;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * settingsTab			                                                      *
+ *                                                                             *
+ ******************************************************************************/
+#settingsTabButton {
+	-fx-background-color: #0042ff;
+	-fx-font-weight:bold;
+}
+
+#settingsTab {
+	-fx-background-color:#313233;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Button				                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.button {
+	-fx-border-color:white;
+	-fx-border-width:1.5;
+	-fx-border-radius: 2px;
+}
+
+.confirm-button {
+	-fx-background-color: #203044;
+}
+
+.button:hover {
+	-fx-background-color:white;
+	-fx-text-fill:#313233;
+}
+
+.button:hover.activated{
+	-fx-cursor:pointer;
+	-fx-background-color:darkgreen;
+	-fx-text-fill:white;
+}
+.activated {
+	-fx-background-color: darkgreen;
+	-fx-text-fill: white;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * ComboBox				                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+.combo-box {
+	-fx-border-color:white;
+	-fx-border-width:1.5;
+	-fx-border-radius: 1px;
+}
+.combo-box:hover {
+	-fx-background: white;
+}
+
+.combo-box:hover > * {
+	-fx-text-fill: #313233;
+}
+
+.arrow {
+	-fx-background-color: white;
+}
+.combo-box-base:hover .arrow {
+	-fx-background-color: #313233;
+}
+
+/* ====   ComboBox dropdown   =============================================== */
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+	-fx-background: #313233;
+	-fx-alignment: center;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover,
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:hover:selected {
+	-fx-accent: white;
+	-fx-background-color: white;
+	-fx-text-fill: #313233;
+}
+
+.combo-box-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:selected {
+	-fx-accent: darkgreen;
+	-fx-background-color: darkgreen;
+	-fx-text-fill: white;
+}
+
+
+/*******************************************************************************
+ *                                                                             *
+ * Hover (cursor change)		                                              *
+ *                                                                             *
+ ******************************************************************************/
+.combo-box, .check-box, .slider, .button, .clickable, .list-cell {
+	-fx-cursor: hand;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Special				                                                      *
+ *                                                                             *
+ ******************************************************************************/
+
+#generatedPW {
+	-fx-font-weight:bold;
+
+}
+
+
+
+
+

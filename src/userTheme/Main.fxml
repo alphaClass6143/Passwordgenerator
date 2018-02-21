@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.CheckBox?>
+<?import application.NumberField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<VBox fx:id="mainContainer" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.MainController">
+
+	
+	<!-- 
+	
+	################
+	### Main GUI ###
+	################
+	
+	 -->
+
+    <!--
+        ### Top (Slider for password size) ###
+    -->
+    <VBox minHeight="385">
+        <VBox id="pwSizeRoot" spacing="10">
+            <HBox spacing="25" alignment="CENTER">
+                <!-- heading -->
+                <Label textAlignment="JUSTIFY" text="%lang.lengthOfPw"/>
+                 <!-- NumberField for input in main GUI -->
+                <NumberField prefWidth="50" fx:id="pwSizeText" text="12" min="4" max="128" minWidth="55"/>
+            </HBox>
+            <!-- Slider for input in main GUI -->
+            <Slider min="4" max="128" fx:id="pwSize" prefWidth="300"/>
+
+            <padding>
+                <Insets top="15.0" right="25.0" bottom="15.0" left="25.0"/>
+            </padding>
+        </VBox>
+
+        <!--
+            ### Center (Control buttons i.e generateBtn and copyBtn) ###
+        -->
+        <HBox spacing="10" id="generateRoot" alignment="CENTER">
+
+            <Button fx:id="generateBtn" text="%lang.generateBtn"/>
+            <Button fx:id="copyBtn" text="%lang.copyBtn"/>
+
+            <padding>
+                <Insets top="15.0" right="35.0" bottom="15.0" left="35.0"/>
+            </padding>
+        </HBox>
+
+        <!--
+            ### Bottom (Output) ###
+        -->
+        <VBox spacing="5" alignment="center" id="outputRoot">
+            <Label text="%lang.generatedPw"/>
+            <Label wrapText="true" textAlignment="CENTER" fx:id="generatedPW"/>
+
+            <padding>
+                <Insets top="15.0" bottom="15.0"/>
+            </padding>
+        </VBox>
+
+        <padding>
+            <Insets left="25" right="25"/>
+        </padding>
+    </VBox>
+
+
+
+    <!--
+		################
+		### Settings ###
+		################
+ 	-->
+    <VBox id="settingsTab" minHeight="450">
+        <HBox spacing="15" fx:id="settingsTabBtn" id="settingsTabButton" styleClass="clickable" alignment="CENTER" minHeight="50">
+            <ImageView>
+                <Image url="/userTheme/img/settings-icon.png"/>
+            </ImageView>
+            <Label textAlignment="CENTER" text="%lang.settings"/>
+            <ImageView>
+                <Image url="/userTheme/img/settings-icon.png"/>
+            </ImageView>
+        </HBox>
+        <!-- VBox separates the button from the content of the settings tab -->
+        <VBox alignment="CENTER">
+            <!--
+            ### Top (Language/Theme settings) ###
+        -->
+            <HBox alignment="CENTER" spacing="15">
+
+                <!-- +++ Language settings with list of languages +++ -->
+                <VBox alignment="CENTER">
+                    <Label text="%lang.settingsLanguage"/>
+                    <ComboBox fx:id="languageList">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Deutsch" />
+                                <String fx:value="English" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <padding>
+                        <Insets top="5.0" bottom="5.0"/>
+                    </padding>
+                </VBox>
+
+                <!-- +++ Theme settings with list of available themes +++ -->
+                <VBox alignment="CENTER">
+                    <Label text="%lang.settingsTheme"/>
+                    <ComboBox fx:id="themeList">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Metro"/>
+                                <String fx:value="Standard"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                    <padding>
+                        <Insets top="5.0" bottom="5.0"/>
+                    </padding>
+                </VBox>
+            </HBox>
+
+            <!--
+                ### Center (Default password size/CheckBox settings) ###
+            -->
+            <VBox>
+
+                <!-- +++ Default password size +++ -->
+                <VBox id="pwSizeRoot" spacing="10">
+                    <HBox spacing="25" alignment="CENTER">
+                        <!-- heading -->
+                        <Label textAlignment="JUSTIFY" text="%lang.settingsDefaultSize"/>
+                        <!-- NumberField for input in main GUI -->
+                        <NumberField prefWidth="50" fx:id="pwDefaultSizeText" text="12" min="4" max="128" minWidth="55"/>
+                    </HBox>
+                    <!-- Slider for input in main GUI -->
+                    <Slider min="4" max="128" fx:id="pwDefaultSize" prefWidth="300"/>
+
+                    <padding>
+                        <Insets top="15.0" bottom="15.0" />
+                    </padding>
+                </VBox>
+
+                <!-- +++ CheckBox settings -->
+                <VBox>
+                    <CheckBox text="%lang.lowerCaseSettingBox" fx:id="lowerCaseSettingBox"/>
+                    <CheckBox text="%lang.upperCaseSettingBox" fx:id="upperCaseSettingBox"/>
+                    <CheckBox text="%lang.numberSettingBox" fx:id="numberSettingBox"/>
+                    <CheckBox text="%lang.specialCharSettingBox" fx:id="specialCharSettingBox"/>
+                    <CheckBox text="%lang.excludeConfusingCharSettingBox" fx:id="excludeConfusingCharSettingBox"/>
+
+                </VBox>
+
+            </VBox>
+
+
+            <!-- +++ Bottom (Settings control i.e saveBtn and cancelBtn) +++ -->
+            <HBox alignment="center" spacing="10">
+                <Button text="%lang.settingsSaveBtn" styleClass="confirm-button, clickable" fx:id="saveBtn"/>
+                <Button text="%lang.settingsCancelBtn" fx:id="cancelBtn"/>
+                <padding>
+                    <Insets top="15.0" bottom="15.0"/>
+                </padding>
+            </HBox>
+            <padding>
+                <Insets left="25" right="25"/>
+            </padding>
+        </VBox>
+
+
+        </VBox>
+
+</VBox>
+
+
+
+
+
+
+
+
+
+
